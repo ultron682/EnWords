@@ -1,0 +1,40 @@
+﻿<ContentDialog
+    x:Class="EnWords.Views_ContentDialogs.SettingsContentDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:EnWords.Views_ContentDialogs"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title="Ustawienia"
+    PrimaryButtonText="Zapisz"
+    SecondaryButtonText="Anuluj"
+    PrimaryButtonClick="ContentDialog_PrimaryButtonClick"
+    SecondaryButtonClick="ContentDialog_SecondaryButtonClick">
+
+    <StackPanel>
+        <Grid Name="SortMethodGrid">
+            <TextBlock Text="Sortuj według"/>
+            <ComboBox x:Name="SortComboBox" Margin="0,22,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Top" SelectedIndex="0">
+                <ComboBoxItem Content="Angielskiego słowa A-Z" IsDoubleTapEnabled="False"/>
+                <ComboBoxItem Content="Angielskiego słowa Z-A" IsDoubleTapEnabled="False"/>
+                <ComboBoxItem Content="Polskiego słowa A-Z" IsDoubleTapEnabled="False"/>
+                <ComboBoxItem Content="Polskiego słowa Z-A" IsDoubleTapEnabled="False"/>
+            </ComboBox>
+        </Grid>
+        <Grid Name="DeleteGrid">
+            <CheckBox x:Name="DeleteCheckBox" IsChecked="False" Content="Usuń wszystkie tłumaczenia" Margin="0,10,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid Name="BackupGrid">
+            <Button x:Name="CreateBackupButton" Margin="0,10,0,0" Content="Zapisz kopie zapasową" HorizontalAlignment="Stretch" VerticalAlignment="Top" Click="CreateBackupButton_Click"/>
+            <Button x:Name="ReadBackupButton" Margin="0,47,0,0" Content="Wczytaj kopie zapasową" HorizontalAlignment="Stretch" VerticalAlignment="Top" Click="ReadBackupButton_Click"/>
+        </Grid>
+        <Grid Name="ExamGrid" BorderBrush="#00000000" >
+            <TextBlock Margin="0,10,0,0" Text="Sposób udzielania odpowiedzi"/>
+            <ComboBox x:Name="ExamComboBox" Margin="0,30,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Top" SelectedIndex="1">
+                <ComboBoxItem Content="Pisemne" IsDoubleTapEnabled="False"/>
+                <ComboBoxItem Content="A-B-C-D" IsDoubleTapEnabled="False"/>
+            </ComboBox>
+        </Grid>
+    </StackPanel>
+</ContentDialog>

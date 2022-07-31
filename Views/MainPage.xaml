@@ -1,0 +1,38 @@
+﻿<Page
+    x:Class="EnWords.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:EnWords.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.BottomAppBar>
+        <CommandBar Background="#FF1565C0" AutomationProperties.HelpText="">
+            <AppBarButton Icon="Add" Label="Dodaj nowe tłumaczenie" Click="AppBarButton_Click"/>
+            <AppBarButton Icon="Refresh" Label="Odśwież" Click="RefreshDatabase"/>
+            <AppBarButton Icon="Library" Label="Test sprawdzający" Click="ExamYourself" />
+            <AppBarButton Icon="Setting" Label="Ustawienia" Click="Settings_Click"/>
+
+            <CommandBar.Content>
+                <Grid Height="48">
+                    <TextBlock x:Name="InfoChange" TextWrapping="Wrap" Width="160" TextAlignment="Left" Margin="15,0,0,0" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Grid>
+            </CommandBar.Content>
+        </CommandBar>
+    </Page.BottomAppBar>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBox x:Name="SearchBox" BorderBrush="#9C27B0" Background="#03A9F4" Foreground="#FF03A9F4" TextWrapping="Wrap" PlaceholderText="Szukaj słowem" VerticalAlignment="Top" Height="35" TextChanging="SearchBox_TextChanging"/>
+        <ListView x:Name="MyListView" Background="#1565c0" IsItemClickEnabled="True" ItemClick="MyListView_ItemClick" Margin="0,35,0,0" Header="   Angielskie słowo                     Polskie słowo">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" BorderBrush="Red" >
+                        <TextBlock Text="{Binding EnglishWord}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="200" />
+                        <TextBlock Text="{Binding PolishWord}" HorizontalAlignment="Right" VerticalAlignment="Top" Height="25" Width="200"  />
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>

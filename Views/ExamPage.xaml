@@ -1,0 +1,44 @@
+﻿<Page
+    x:Class="EnWords.Views.ExamPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:EnWords.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="#FF1565C0">
+        <TextBlock x:Name="Points" FontSize="50" TextAlignment="Center" Margin="10,10,10,0" TextWrapping="Wrap" Text="0/10" VerticalAlignment="Top" FontFamily="Calibri"/>
+
+
+        <Grid x:Name="WrittenMethodAnswerGrid" Visibility="Collapsed">
+            <Grid Height="150" Margin="20,0,20,0">
+                <Rectangle Stroke="White" />
+                <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Angielskie tłumaczenie:" VerticalAlignment="Top" Width="160"/>
+                <TextBlock HorizontalAlignment="Left" Margin="10,60,0,0" TextWrapping="Wrap" Text="Polskie tłumaczenie:" Width="160" Height="20" VerticalAlignment="Top"/>
+                <TextBox x:Name="EnglishTranslateField" KeyUp="TranslateField_KeyDown" Margin="175,10,10,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="PolishTranslateField" KeyUp="TranslateField_KeyDown" Margin="175,60,10,0" Height="32" VerticalAlignment="Top"/>
+                <Button x:Name="CheckButton" Foreground="Black" Content="Sprawdź" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Background="LightGreen" Margin="10,0,10,13" Height="32" Click="CheckButton_Click"/>
+            </Grid>
+        </Grid>
+
+
+
+        <Grid x:Name="SelectableMethodAnswerGrid" Visibility="Collapsed" Margin="40,200,40,0" Height="210" VerticalAlignment="Top">
+            <Rectangle Stroke="White" />
+            <TextBlock x:Name="Question" TextAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="0,10,0,0" Foreground="White" Text="Testowe pytanie" Height="20"/>
+            <StackPanel Margin="10,40,10,10">
+                <Button x:Name="AnswerAButton" Margin="0,0,0,0" Content="Przykład1" HorizontalAlignment="Stretch"  VerticalAlignment="Top" Click="AnswerButton_Click"/>
+                <Button x:Name="AnswerBButton" Margin="0,10,0,0" Content="Przykład2" HorizontalAlignment="Stretch" VerticalAlignment="Top" Click="AnswerButton_Click"/>
+                <Button x:Name="AnswerCButton" Margin="0,10,0,0" Content="Przykład3" HorizontalAlignment="Stretch" VerticalAlignment="Top" Click="AnswerButton_Click"/>
+                <Button x:Name="AnswerDButton" Margin="0,10,0,0" Content="Przykład4" HorizontalAlignment="Stretch" VerticalAlignment="Top" Click="AnswerButton_Click"/>
+            </StackPanel>
+        </Grid>
+
+
+
+
+
+        <AppBarButton x:Name="ButtonNavigateToMainPage" HorizontalAlignment="Left" Icon="Back" Margin="10,0,0,3" VerticalAlignment="Bottom" Height="46" Width="38" Click="ButtonNavigateToMainPage_Click"/>
+    </Grid>
+</Page>
